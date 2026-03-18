@@ -24,4 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "CyyAndroid"
 include(":app")
+include(":feature:widget")
  

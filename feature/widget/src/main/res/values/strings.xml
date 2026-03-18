@@ -1,0 +1,11 @@
+<resources>
+    <string name="widget_title">示例 Widget</string>
+    <string name="widget_description">这是一个使用 Glance 框架构建的示例 Widget</string>
+    <string name="widget_loading">加载中...</string>
+    <string name="widget_empty">暂无数据</string>
+    <string name="widget_error">加载失败</string>
+    <string name="widget_refresh">刷新</string>
+    <string name="widget_configure_title">配置 Widget</string>
+    <string name="widget_configure_theme">选择主题</string>
+    <string name="widget_configure_interval">更新频率</string>
+</resources>

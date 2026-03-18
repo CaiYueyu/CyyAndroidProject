@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Widget 相关权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application>
+
+        <!-- Widget 配置 Activity -->
+        <activity
+            android:name=".WidgetConfigureActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <!-- 示例 Widget Receiver -->
+        <receiver
+            android:name=".SampleAppWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_title">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.cyy.android.WIDGET_DATA_UPDATED" />
+                <action android:name="com.cyy.android.WIDGET_ACTION" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/sample_app_widget_info" />
+        </receiver>
+
+        <!-- Widget 刷新广播接收器 -->
+        <receiver
+            android:name=".core.WidgetRefreshReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.cyy.widget.ACTION_REFRESH" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
